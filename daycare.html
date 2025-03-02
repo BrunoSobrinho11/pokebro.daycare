@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daycare</title>
+    <style>
+        body {
+    background-image: url('eevee.jpg'); /* Caminho da imagem */
+    background-size: cover; /* A imagem vai cobrir toda a área da tela */
+    background-position: center; /* A imagem será centralizada */
+    background-attachment: fixed; /* A imagem ficará fixa enquanto você rola a página */
+    height: 100vh; /* Garante que a altura do corpo ocupe toda a tela */
+    margin: 0; /* Remove a margem padrão */
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #searchBar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .emoji {
+            font-size: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .note {
+            color: #999;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .pokeorb-icon {
+    width: 15px; /* Ajuste o tamanho da imagem */
+    height: 15px; /* Ajuste o tamanho da imagem */
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Grupo de Ovos</h2>
+        
+        <!-- Barra de Pesquisa -->
+        <input type="text" id="searchBar" placeholder="Pesquisar Pokémon..." onkeyup="filtrarPokemons()">
+        
+        <div class="section-title">Esta lista é de utilidade pública</div>
+                
+        <div class="section-title">''Compartilhe seu conhecimento''</div>
+        
+        <div class="section-title">(Esta lista estará em constante atualização)</div>
+        
+        <div class="section-title">Legenda</div>
+        <ul id="pokemonList">
+            <img src="imagens/rubi.png" alt="rubi" class="pokeorb-icon">Rubi<div>
+            <img src="imagens/safira.png" alt="safira" class="pokeorb-icon">Safira</div>
+            <img src="imagens/esmeralda.png" alt="esmeralda" class="pokeorb-icon">Esmeralda<div>
+            <img src="imagens/pérola.png" alt="pérola" class="pokeorb-icon">Pérola<div>
+            <img src="imagens/turmalina.png" alt="Turmalina" class="pokeorb-icon">Turmalina</div>
+            <img src="imagens/jaspe.png" alt="Jaspe" class="pokeorb-icon">Jaspe<div>
+            <img src="imagens/Ônix.png" alt="Ônix" class="pokeorb-icon">Ônix<div>
+            <img src="imagens/Âmbar.png" alt="Âmbar" class="pokeorb-icon">Âmbar</div>
+            <img src="imagens/Topázio.png" alt="Topázio" class="pokeorb-icon">Topázio</div>
+            <img src="imagens/Lazuli.png" alt="Lazuli" class="pokeorb-icon">Lazuli<div>
+            <img src="imagens/Ametista.png" alt="Ametista" class="pokeorb-icon">Ametista</div>
+        </ul>
+        
+        <div class="section-title">GRUPO MONSTRO</div>
+        
+        <ul id="pokemonList">
+            <img src="imagens/rubi.png" alt="rubi" class="pokeorb-icon">Charmander<div>
+            <img src="imagens/rubi.png" alt="rubi" class="pokeorb-icon">Nidoran Macho</div>
+            <img src="imagens/safira.png" alt="safira" class="pokeorb-icon">Squirtle<div>
+            <img src="imagens/safira.png" alt="safira" class="pokeorb-icon">Totodile</div>
+            <img src="imagens/esmeralda.png" alt="esmeralda" class="pokeorb-icon">Bulbasaur<div>
+            <img src="imagens/esmeralda.png" alt="esmeralda" class="pokeorb-icon">Treecko</div>
+            <img src="imagens/ametista.png" alt="Ametista" class="pokeorb-icon">Nidoran Fêmea<div>
+            <img src="imagens/ametista.png" alt="Ametista" class="pokeorb-icon">Whismur</div>
+            <img src="imagens/turmalina.png" alt="Turmalina" class="pokeorb-icon">Slowpoke (Usar ''Concha com pérola'' para maiores chances)<div>
+            <img src="imagens/turmalina.png" alt="Turmalina" class="pokeorb-icon">Lickitung (Necessário utilizar Laço Rosa)</div>
+
+        </ul>
+
+
+            <div class="section-title">GRUPO HUMANÓIDE</div>
+
+            <ul id="pokemonList"></ul>
+            <img src="imagens/rubi.png" alt="rubi" class="pokeorb-icon">Volbeat<div>
+            <img src="imagens/rubi.png" alt="rubi" class="pokeorb-icon">Magby (Necessário utilizar Isqueiro)</div>
+            <img src="imagens/rubi.png" alt="rubi" class="pokeorb-icon">Pawniard (Necessário utilizar Peça de Xadrez)<div>
+            <img src="imagens/turmalina.png" alt="Turmalina" class="pokeorb-icon">Mime Jr (Necessário utilizar Espelho de Mão)</div>
+            <img src="imagens/turmalina.png" alt="Turmalina" class="pokeorb-icon">Smoochum (Necessário utilizar Batom)<div>
+            <img src="imagens/Âmbar.png" alt="Âmbar" class="pokeorb-icon">Abra<div>
+            <img src="imagens/Âmbar.png" alt="Âmbar" class="pokeorb-icon">Drowze</div>
+            <img src="imagens/Âmbar.png" alt="Âmbar" class="pokeorb-icon">Spinda<div>
+            <img src="imagens/Topázio.png" alt="Topázio" class="pokeorb-icon">Makuhita<div>
+            <img src="imagens/Topázio.png" alt="Topázio" class="pokeorb-icon">Chimchar</div>
+            <img src="imagens/jaspe.png" alt="Jaspe" class="pokeorb-icon">Buneary<div>
+            <img src="imagens/jaspe.png" alt="Jaspe" class="pokeorb-icon">Machop (Usar ''Halter'' para maiores chances)</div>
+            <img src="imagens/jaspe.png" alt="Jaspe" class="pokeorb-icon">Tyrogue (Necessário utilizar Bandana de Lutador)<div>
+            <img src="imagens/Ônix.png" alt="Ônix" class="pokeorb-icon">Meditite</div>
+            <img src="imagens/Ônix.png" alt="Ônix" class="pokeorb-icon">Riolu (Necessário utilizar Pingente da Alma)<div>
+            <img src="imagens/Ametista.png" alt="Ametista" class="pokeorb-icon">Sableye</div>
+            <img src="imagens/Ametista.png" alt="Ametista" class="pokeorb-icon">Cacnea<div>
+            <img src="imagens/Ametista.png" alt="Ametista" class="pokeorb-icon">Croagunk (Usar ''Frasco de veneno'' para maiores chances)</div>
+            <img src="imagens/pérola.png" alt="pérola" class="pokeorb-icon">Illumise<div>
+            <img src="imagens/pérola.png" alt="pérola" class="pokeorb-icon">Elekid (Necessário utilizar Lampada)</div>
+
+        </ul>
+
+        <div class="section-title">GRUPO ÁGUA 1</div>
+
+        <ul id="pokemonList"></ul>
+<img src="imagens/rubi.png" alt="rubi" class="pokeorb-icon">Corpish<div>
+<img src="imagens/rubi.png" alt="rubi" class="pokeorb-icon">Omanyte (Necessário utilizar Fóssil estrela)</div>
+<img src="imagens/safira.png" alt="safira" class="pokeorb-icon">Poliwag<div>
+<img src="imagens/safira.png" alt="safira" class="pokeorb-icon">Squirtle</div>
+<img src="imagens/safira.png" alt="safira" class="pokeorb-icon">Wailmer<div>
+<img src="imagens/safira.png" alt="safira" class="pokeorb-icon">Totodile</div>
+<img src="imagens/jaspe.png" alt="Jaspe" class="pokeorb-icon">Bidoof<div>
+<img src="imagens/jaspe.png" alt="Jaspe" class="pokeorb-icon">Kabuto (Necessário utilizar Pérola Ultra Rara)</div>
+<img src="imagens/jaspe.png" alt="Jaspe" class="pokeorb-icon">Buizel<div>
+<img src="imagens/turmalina.png" alt="Turmalina" class="pokeorb-icon">Slowpoke (Usar ''Concha com pérola'' para maiores chances)</div>
+<img src="imagens/turmalina.png" alt="Turmalina" class="pokeorb-icon">Corsola<div>
+<img src="imagens/turmalina.png" alt="Turmalina" class="pokeorb-icon">Feebas (Necessário utilizar Escama Prismática)</div>
+<img src="imagens/Topázio.png" alt="Topázio" class="pokeorb-icon">Psyduck<div>
+<img src="imagens/Topázio.png" alt="Topázio" class="pokeorb-icon">Dratini (Necessário utilizar Colar de Cristal)</div>
+<img src="imagens/Topázio.png" alt="Topázio" class="pokeorb-icon">Stunfisk<div>
+    <img src="imagens/pérola.png" alt="pérola" class="pokeorb-icon">Delibird</div>
+    <img src="imagens/pérola.png" alt="pérola" class="pokeorb-icon">Mantyke<div>
+    <img src="imagens/pérola.png" alt="pérola" class="pokeorb-icon">Clamperl</div>
+    <img src="imagens/Lazuli.png" alt="Lazuli" class="pokeorb-icon">Horsea<div>
+    <img src="imagens/Lazuli.png" alt="Lazuli" class="pokeorb-icon">Seel</div>
+    <img src="imagens/Lazuli.png" alt="Lazuli" class="pokeorb-icon">Piplup<div>
+    <img src="imagens/Lazuli.png" alt="Lazuli" class="pokeorb-icon">Lapras (Necessário utilizar Sorteve Italiano)</div>
+    <img src="imagens/Ametista.png" alt="Ametista" class="pokeorb-icon">Azurill<div>
+    <img src="imagens/Ametista.png" alt="Ametista" class="pokeorb-icon">Remoraid</div>
+    <img src="imagens/Ametista.png" alt="Ametista" class="pokeorb-icon">Alomomola<div>
+    <img src="imagens/Ônix.png" alt="Ônix" class="pokeorb-icon">Relicanth</div>
+    <img src="imagens/Ônix.png" alt="Ônix" class="pokeorb-icon">Mudkip<div>
+    <img src="imagens/esmeralda.png" alt="esmeralda" class="pokeorb-icon">Lotad</div>
+    <img src="imagens/esmeralda.png" alt="esmeralda" class="pokeorb-icon">Surskit<div>
+    <img src="imagens/Âmbar.png" alt="Âmbar" class="pokeorb-icon">Wingull</div>
+    <img src="imagens/Âmbar.png" alt="Âmbar" class="pokeorb-icon">Spheal (Usar ''Bola de malabares'' para maiores chances)<div>
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Meu Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        #userMessage {
+            margin-bottom: 20px;
+        }
+        /* Estilo do botão de abrir a aba */
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu-btn:hover {
+            background: #0056b3;
+        }
+        /* Estilo da aba lateral */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px; /* Oculta a aba no início */
+            width: 250px;
+            height: 100%;
+            background: #333;
+            color: white;
+            padding-top: 60px;
+            transition: 0.3s;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            background: #575757;
+        }
+        /* Botão de fechar */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="openSidebar()">☰ Menu</button>
+
+    <div class="sidebar" id="sidebar">
+        <span class="close-btn" onclick="closeSidebar()">×</span>
+        <a href="daycare.html" target="_blank">🏠 Daycare</a>
+        <a href="#">📝 Criar Postagem</a>
+        <a href="#">⚙️ Configurações</a>
+        <a href="#" onclick="logout()">🚪 Sair</a>
+    </div>
+
+    <div class="container">
+        <h2>Bem-vindo ao Blog!</h2>
+        <p id="userMessage">Carregando...</p>
+    </div>
+
+    <script>
+        // Verifica se o usuário está logado
+        const user = localStorage.getItem("user");
+        if (!user) {
+            window.location.href = "index.html";
+        } else {
+            document.getElementById("userMessage").textContent = `Olá, ${user}!`;
+        }
+
+        // Função para abrir a aba lateral
+        function openSidebar() {
+            document.getElementById("sidebar").style.right = "0";
+        }
+
+        // Função para fechar a aba lateral
+        function closeSidebar() {
+            document.getElementById("sidebar").style.right = "-250px";
+        }
+
+        // Função para sair
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
