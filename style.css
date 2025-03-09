@@ -1,0 +1,116 @@
+body {
+    background-color: #121212; /* Fundo escuro */
+    color: white; /* Texto branco */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #181818; /* Fundo da caixa */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.data {
+    color: #888;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #bbb;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.secao {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #4a90e2; /* Azul semelhante ao da imagem */
+    text-decoration: none;
+    padding: 8px 12px;
+    margin: 2px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.pagination a:hover {
+    background-color: #333;
+    color: white;
+}
+
+.pagination .active {
+    font-weight: bold;
+    color: white;
+    background-color: #4a90e2;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.tab-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tabs-wrapper {
+    overflow: hidden;
+    width: 300px; /* Ajuste conforme necessário */
+}
+
+.tabs {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tab-button {
+    background: #444;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 5px;
+    min-width: 80px;
+}
+
+.tab-button.active {
+    background: #6b7aff;
+}
+
+.scroll-btn {
+    background: #222;
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}

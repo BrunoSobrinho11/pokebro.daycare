@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missões - Pokémon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2f33;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #23272a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+        }
+        .tab-button {
+            background: #444;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            font-size: 16px;
+            border-radius: 5px 5px 0 0;
+            margin: 0 5px;
+        }
+        .tab-button.active {
+            background: #7289da;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border-top: 2px solid #7289da;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .map {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Missões</h2>
+        
+        <!-- Botões das abas -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'box1')">Box 1</button>
+            <button class="tab-button" onclick="openTab(event, 'box2')">Box 2</button>
+            <button class="tab-button" onclick="openTab(event, 'box2.1')">Box 2.1</button>
+            <button class="tab-button" onclick="openTab(event, 'box3')">Box 3</button>
+            <button class="tab-button" onclick="openTab(event, 'box3.1')">Box 3.1</button>
+            <button class="tab-button" onclick="openTab(event, 'box4')">Box 4</button>
+        </div>
+
+        <!-- Conteúdo das abas -->
+        <div id="box1" class="tab-content active">
+            <h3>Box 1</h3>
+            <p><strong>Lvl Necessário:</strong> 25</p>
+            <p><strong>Pokémons Envolvidos:</strong> Weedle, Ledyba e Mankey.</p>
+            <p>A quest do NPC Pedro está localizada em Viridian, ao lado do CP na parte superior à esquerda.</p>
+            <img src="imagens/viridian.jpg" alt="Mapa de Viridian" class="map">
+        </div>
+
+        <div id="box2" class="tab-content">
+            <h3>Box 2</h3>
+            <p><strong>Lvl Necessário:</strong> 30</p>
+            <p><strong>Pokémons Envolvidos:</strong> Rattata, Pidgey e Ekans.</p>
+            <p>A quest do NPC Carlos está localizada em Pewter, perto do ginásio.</p>
+            <img src="imagens/pewter_map.png" alt="Mapa de Pewter" class="map">
+        </div>
+
+        <div id="box2.1" class="tab-content">
+            <h3>Box 2.1</h3>
+            <p><strong>Lvl Necessário:</strong> 40</p>
+            <p><strong>Pokémons Envolvidos:</strong> Growlithe, Sandshrew e Meowth.</p>
+            <p>A quest do NPC Ana está localizada em Cerulean, ao lado da ponte.</p>
+            <img src="imagens/cerulean_map.png" alt="Mapa de Cerulean" class="map">
+        </div>
+
+        <div id="box3" class="tab-content active">
+            <h3>Box 3</h3>
+            <p><strong>Lvl Necessário:</strong> 125</p>
+            <p><strong>Pokémons Envolvidos:</strong> Weedle, Ledyba e Mankey.</p>
+            <p>A quest do NPC Pedro está localizada em Viridian, ao lado do CP na parte superior à esquerda.</p>
+            <img src="imagens/viridian.jpg" alt="Mapa de Viridian" class="map">
+        </div>
+
+        <div id="box3.1" class="tab-content active">
+            <h3>Box 3.1</h3>
+            <p><strong>Lvl Necessário:</strong> 25</p>
+            <p><strong>Pokémons Envolvidos:</strong> Weedle, Ledyba e Mankey.</p>
+            <p>A quest do NPC Pedro está localizada em Viridian, ao lado do CP na parte superior à esquerda.</p>
+            <img src="imagens/viridian.jpg" alt="Mapa de Viridian" class="map">
+        </div>  
+        <div id="box4" class="tab-content active">
+            <h3>Box 4</h3>
+            <p><strong>Lvl Necessário:</strong> 25</p>
+            <p><strong>Pokémons Envolvidos:</strong> Weedle, Ledyba e Mankey.</p>
+            <p>A quest do NPC Pedro está localizada em Viridian, ao lado do CP na parte superior à esquerda.</p>
+            <img src="imagens/viridian.jpg" alt="Mapa de Viridian" class="map">
+        </div>
+    </div>
+
+    
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>

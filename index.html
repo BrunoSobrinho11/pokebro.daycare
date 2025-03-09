@@ -12,6 +12,28 @@
             padding: 0;
         }
 
+        body {
+    background-image: url('https://www.pokebro.com/static/img/bg-header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-image: url('https://www.pokebro.com/static/img/footer-bg.png');
+    background-size: contain; /* Ajusta o tamanho sem cortar */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150px; /* Ajuste conforme necessário */
+    width: 100%;
+    margin-top: auto; /* Mantém o rodapé na parte inferior */
+}
+
+ 
+
         /* Estilo da barra de navegação */
         .navbar {
             background-color: #333;
@@ -103,13 +125,7 @@
 </head>
 <body>
 
-    <!-- Barra de navegação -->
-    <div class="navbar">
-        <a href="#inicio">Início</a>
-        <a href="#noticias">Notícias</a>
-    
-       
-    </div>
+   
 
     <!-- Conteúdo da Página Inicial -->
     <div class="container">
@@ -126,20 +142,30 @@
             <div class="option-card">
                 <h3>Notícias</h3>
                 <p>Fique por dentro das últimas atualizações e eventos.</p>
-                <a href="noticias.html">Leia as notícias</a>
+                <a href="atualizacoes.html">Leia as notícias</a>
+            </div>
+            <div class="option-card">
+                <h3>Missões</h3>
+                <p>Confira as missões disponíveis no jogo.</p>
+                <a href="missoes.html">Acessar</a>
+            </div>
+            <div class="option-card">
+                <h3>Mapa</h3>
+                <p>Confira o mapa do jogo.</p>
+                <a href="mapa.html">Acessar</a>
             </div>
             
     
         </div>
     </div>
     <div class="discord-link">
-        <a href="https://discord.gg/TwpkACjs" target="_blank">
+        <a href="https://discord.gg/Qm38xa5dyx" target="_blank">
             <img src="discord.png" alt="Discord" class="discord-icon">
         </a>
     </div>
     <div class="Pokebro-link">
         <a href="https://www.pokebro.com/" target="_blank">
-            <img src="pokebro.png" alt="Pokebro" class="pokebro-icon">
+            <img src="imagens/pokebro2.png" alt="Pokebro" class="pokebro-icon">
         </a>
     </div>
 </div>

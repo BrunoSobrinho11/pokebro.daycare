@@ -30,3 +30,41 @@ let perolaImagem = "imagens/perola.png";
 let turmalinaImagem = "imagens/turmalina.png";
 
 // Agora você pode usar essas variáveis em seu código HTML
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const paginationLinks = document.querySelectorAll(".pagination a");
+
+        paginationLinks.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                
+                // Remove classe ativa dos outros números
+                paginationLinks.forEach(a => a.classList.remove("active"));
+                
+                // Adiciona classe ativa ao número clicado
+                this.classList.add("active");
+
+                // Aqui você pode adicionar código para carregar novas atualizações
+                console.log("Página selecionada:", this.textContent);
+            });
+        });
+    });
+</script>
+
+
+
+let scrollIndex = 0;
+
+function scrollTabs(direction) {
+    const tabsContainer = document.querySelector(".tabs");
+    const tabWidth = document.querySelector(".tab-button").offsetWidth + 10; // Inclui margens
+    const maxScroll = tabsContainer.scrollWidth - tabsContainer.parentElement.offsetWidth;
+
+    scrollIndex += direction * tabWidth;
+    if (scrollIndex < 0) scrollIndex = 0;
+    if (scrollIndex > maxScroll) scrollIndex = maxScroll;
+
+    tabsContainer.style.transform = `translateX(-${scrollIndex}px)`;
+}
